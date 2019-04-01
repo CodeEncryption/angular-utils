@@ -16,15 +16,18 @@ import {
 })
 export class ScoreComponent implements OnInit {
   @Output() select=new EventEmitter<number>();
+  @Input() num:number=5;
   @Input() score:number;
   @Input() position:string;
   @Input() disabled:string;
   @ViewChild('pos') pos:ElementRef;
-  status=[]
+  items=[];
+  status=[];
   constructor(private el:ElementRef,private rd:Renderer2) { }
   
   ngOnInit() {
     this.rd.addClass(this.pos.nativeElement,this.position)
+    this.items.length=this.num;
     //初始化评分
     this.star(this.score,true)
   }
@@ -33,7 +36,7 @@ export class ScoreComponent implements OnInit {
     for(let i=0;i<n;i++){
       this.status[i]=true;
     }
-    for(let j=4;j>=n;j--){
+    for(let j=this.num-1;j>=n;j--){
       this.status[j]=false;
     }
     this.select.emit(n);

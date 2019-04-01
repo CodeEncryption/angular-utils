@@ -1,9 +1,5 @@
 <div class="container" #pos>
   <div class="score">
-    <a [ngClass]="{'on': status[0]}" (click)="star(1)"> <span>★</span> </a>
-    <a [ngClass]="{'on': status[1]}" (click)="star(2)"> <span>★</span> </a>
-    <a [ngClass]="{'on': status[2]}" (click)="star(3)"> <span>★</span> </a>
-    <a [ngClass]="{'on': status[3]}" (click)="star(4)"> <span>★</span> </a>
-    <a [ngClass]="{'on': status[4]}" (click)="star(5)"> <span>★</span> </a>
+    <a *ngFor="let item of items; let i=index" [ngClass]="{'on': status[i]}" (click)="star(i+1)"> <span>★</span> </a>
   </div>
 </div>
