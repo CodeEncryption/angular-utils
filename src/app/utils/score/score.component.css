@@ -1,0 +1,22 @@
+.container{
+  width: 100%;
+  display: flex;
+}
+.container.start{
+  justify-content: flex-start;
+}
+.container.end{
+  justify-content: flex-end;
+}
+.container.center{
+  justify-content: center;
+}
+.score{
+  line-height: 25px;
+  color: #ccc;
+  font-size: 25px;
+  cursor: pointer;
+}
+.score a.on{
+  color:#f90;
+}
