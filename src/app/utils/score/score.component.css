@@ -2,13 +2,13 @@
   width: 100%;
   display: flex;
 }
-.container.start{
+.container.start,.container.left{
   justify-content: flex-start;
 }
-.container.end{
+.container.end,.container.right{
   justify-content: flex-end;
 }
-.container.center{
+.container.center,.container.middle{
   justify-content: center;
 }
 .score{
