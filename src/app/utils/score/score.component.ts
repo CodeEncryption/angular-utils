@@ -33,15 +33,14 @@ export class ScoreComponent implements OnInit {
     position: this.position,
     disable: this.disable
   };
-  items = [];
-  status = [];
+  status = [];//星星的状态
   @Input()
   set option(option: Option) {
     this._option.num = option.num;
     this._option.score = option.score;
     this._option.position = option.position;
     this._option.disable = option.disable;
-    this.items.length = this._option.num;
+    this.status.length = this._option.num;
   }
   get option(): Option {
     return this._option;
